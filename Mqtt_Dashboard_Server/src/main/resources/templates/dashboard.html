@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" ng-app="smarfactoryApp">
+<head>
+    <script th:src="@{/js/lib/angular.min.js}"></script>
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
+    <link th:href="@{/css/lib/bootstrap.min.css}" rel="stylesheet"/>
+    <script th:src="@{/js/app.js}"></script>
+    <script th:src="@{/js/lib/Chart.bundle.min.js}"></script>
+    <script th:src="@{/js/lib/Chart.min.js}"></script>
+    <script th:src="@{/js/lib/angular-chart.min.js}"></script>
+</head>
+
+<body>
+
+<div id="contentWrapper">
+
+    <!-- Top Bar -->
+    <nav id="topBar" class="navbar navbar-dark contx" ng-controller="ButtonHandler">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Smartfactory</a>
+            </div>
+            <div class="nav navbar-nav">
+                <button type="button" class="btn btn-success" ng-click="startMqtt()">Starte Client</button>
+            </div>
+            <div class="nav navbar-nav">
+                <button type="button" class="btn btn-success" ng-click="getClientsData()">Hole Clienten Daten</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Side menu -->
+
+    <div class="sidenav contx">
+        <div class="profilContainer">
+
+        </div>
+        <a href="#">Overview</a>
+        <a href="#">Maschinen</a>
+        <a href="#">Settings</a>
+    </div>
+
+
+    <!-- main Content -->
+
+
+    <div id="mainSection" class="main">
+
+        <div class="mainContentSection ">
+
+            <section class="widgetContainer contx mt-5" ng-controller="AllMessageController">
+                <div class="table-wrapper-scroll-y">
+                    <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Topic</th>
+                            <th scope="col">Value</th>
+                            <th scope="col">Unit</th>
+                            <th scope="col">Time</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="mqttMessage in mqttMessages" scope="row">
+                            <td>{{mqttMessage.topic}}</td>
+                            <td>{{mqttMessage.value}}</td>
+                            <td>{{mqttMessage.unit}}</td>
+                            <td>{{mqttMessage.time}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!--  Test SensorWidget -->
+            <div class="contx widgetContainer mt-5" ng-controller="AllMessageController">
+                <div class="row widgetContent">
+                    <div class="col item1">
+                        <div class="height100">
+                            <canvas id="myChart" class="" width="200px" max-height="200px"></canvas>
+                        </div>
+                    </div>
+                    <div class="col item2">
+                        <div class="height50"></div>
+                        <div class="height50"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    var ctx = document.getElementById("myChart");
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+.cards-container {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.alert-item {
+  flex-basis: 80%;
+  margin-right: 15px;
+}
+
+.sensor-item {
+  flex-basis: 20%;
+}
+
+table {
+  width: 100%;
+}

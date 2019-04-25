@@ -1,0 +1,23 @@
+
+.setting-container {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.dashboard-Area {
+  flex-basis: 80%;
+  margin-right: 15px;
+}
+
+div.sensor-List {
+  width: 18%;
+  position: fixed;
+  right: 15px;
+  height: 90%;
+}
+

@@ -1,0 +1,43 @@
+<mat-toolbar color="primary" class="example-toolbar">
+  <h1 class="app-name">Iot-Factory</h1>
+</mat-toolbar>
+
+ <div class="login-container">
+   <div class="login-spacer"></div>
+   
+   <mat-card class="login-card">
+      <mat-card-header>
+          <mat-card-title>
+              Login
+          </mat-card-title>
+          <mat-card-subtitle>
+            
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="form-container">
+
+                <mat-form-field color="primary" class="form-item">
+                  <input matInput placeholder="Enter your email" [formControl]="email" required>
+                  <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field color="primary" class="form-item">
+                    <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" [formControl]="password" required>
+                    <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+  
+              </div>
+
+              <div class="button-container">
+                <button color="primary" mat-raised-button id="login-button" (click)="login()">Login</button>
+                <button color="accent" mat-raised-button id="register-button" (click)="register()">Register</button>
+              </div>
+        </mat-card-content>
+   </mat-card>
+
+   <div class="login-spacer"></div>
+ </div>
+
+

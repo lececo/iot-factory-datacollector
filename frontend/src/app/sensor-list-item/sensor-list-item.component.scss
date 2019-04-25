@@ -1,0 +1,37 @@
+.sensorListItem{
+  margin: 0 0 5px 0;
+}
+
+.sensorListItem:hover{
+  cursor: pointer;
+  border-left-width:8px;
+}
+
+.addText{
+  color: #0bdaa1;
+  font-weight: bolder;
+}
+
+.add-widget-button {
+  transform: scale(0.7,0.7);
+  background-color: #0bdaa1;
+}
+
+.add-widget-button:hover{
+  background-color: #52dab0;
+}
+
+.running{
+  border-left: 5px solid lawngreen;
+}
+.standing{
+  border-left: 5px solid deepskyblue;
+}
+.disturbing{
+  border-left: 5px solid red;
+}
+.maintenance{
+  border-left: 5px solid orange;
+}
+
+

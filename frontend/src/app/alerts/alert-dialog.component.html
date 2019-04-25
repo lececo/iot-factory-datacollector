@@ -1,0 +1,27 @@
+<div class="form-item">
+    <h6>ClientId</h6>
+    <p>{{data.clientId}}</p>
+</div>
+
+<mat-form-field class="full-row form-item">
+  <mat-select placeholder="Alert-Typ" [formControl]="alertType">
+    <mat-option value="mqtt">Mqtt-Nachricht</mat-option>
+    <mat-option value="email">Email</mat-option>
+  </mat-select>
+  <mat-error *ngIf="alertType.invalid">{{getErrorMessage()}}</mat-error>    
+</mat-form-field>
+
+<mat-form-field class="half-row-left form-item">
+    <input matInput placeholder="Minimaler Wert" [formControl]="min">
+    <mat-error *ngIf="min.invalid">{{getErrorMessage()}}</mat-error>
+</mat-form-field>
+
+<mat-form-field class="half-row-right form-item">
+    <input matInput placeholder="Maximaler Wert" [formControl]="max">
+    <mat-error *ngIf="max.invalid">{{getErrorMessage()}}</mat-error>
+</mat-form-field>
+
+<div mat-dialog-actions class="full-row form-item">
+    <button mat-flat-button color=primary class="half-row-left" (click)="save()">Speichern</button>
+    <button mat-flat-button color=primary class="half-row-right" (click)="close()">Schließen</button>
+  </div>

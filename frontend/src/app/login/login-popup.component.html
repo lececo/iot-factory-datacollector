@@ -1,0 +1,8 @@
+<h1 mat-dialog-title *ngIf="data.registered">Registration successful</h1>
+<h1 mat-dialog-title *ngIf="!data.registered">Error</h1>
+<div mat-dialog-content>
+  <p *ngIf="!data.registered">{{data.errorMessage}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Close</button>
+</div>

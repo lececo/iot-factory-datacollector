@@ -1,0 +1,42 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.card-id {
+  position: absolute;
+  top: 20px;
+  right: 80px;
+  font-size: 60%;
+  color: grey;
+}
+
+.add-widget-button {
+  position: fixed;
+  z-index: 99;
+  bottom: 3%;
+  right: 3%;
+}
+
+.dashboard-card-content {
+  height: 100%;
+  width: 100%;
+}
+
+.widget-container {
+  height: 100%;
+  width: 100%;
+}

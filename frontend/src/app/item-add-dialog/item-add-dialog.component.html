@@ -1,0 +1,56 @@
+<h1 mat-dialog-title>Add Sensor</h1>
+<div mat-dialog-content style="height: 100%">
+
+
+  <mat-form-field>
+    <mat-label>ClientID</mat-label>
+    <input matInput disabled value="{{data.sensor.clientId}}">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>SensorID</mat-label>
+    <input matInput disabled value="{{data.sensor.sensorId}}">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>SensorUnit</mat-label>
+    <input matInput disabled value="{{data.sensor.sensorUnit}}">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>IsActive</mat-label>
+    <input matInput disabled value="{{data.sensor.active}}">
+  </mat-form-field>
+
+  <form [formGroup]="followSensorForm" (ngSubmit)="add()">
+    <div>
+      <mat-label>Widget-Size:</mat-label>
+      <mat-radio-group id="widgetIsBig" [(ngModel)]="selectedWidgetIsBig"  formControlName="widgetIsBig">
+        <mat-radio-button value="ja" >big</mat-radio-button>
+        <mat-radio-button value="nein" >small</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div>
+      <mat-form-field class="full-row form-item">
+        <mat-select placeholder="Widget-Type" id="widgetType" formControlName="widgetType" [(ngModel)]="selectedWidget">
+          <mat-option *ngFor="let option of optionsWidget" value="{{option}}">
+            {{option}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+
+    <div>
+      <mat-form-field>
+        <mat-label>Position-Number</mat-label>
+        <input id="position" matInput  [(ngModel)]="selectedPosition" formControlName="position" type="number">
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions class="full-row form-item">
+      <button mat-flat-button color=primary class="half-row-left" type="submit">Add</button>
+      <button mat-flat-button color=primary class="half-row-right" (click)="close()">Close</button>
+    </div>
+  </form>
+
+
+</div>

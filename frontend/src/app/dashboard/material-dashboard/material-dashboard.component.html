@@ -1,0 +1,50 @@
+<div class="grid-container">
+  <mat-grid-list cols="4" rowHeight="350px" *ngIf="cards.length > 0; else emptyCardsBlock">
+
+    <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows" class="">
+      <mat-card class="dashboard-card">
+        <mat-card-header class="">
+          <mat-card-title>
+            {{card.title}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu" *ngIf="onSettingPage">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-button (click)="removeCard(card)">Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <hr>
+        <mat-card-content class="dashboard-card-content">
+          <app-widget-wrapper [widget]="card.widget" class="widget-container"></app-widget-wrapper>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+  <ng-template #emptyCardsBlock>
+    <mat-grid-list cols="4" rowHeight="350px">
+
+      <mat-grid-tile>
+        <mat-card class="dashboard-card">
+          <mat-card-header class="">
+            <mat-card-title>
+              Dein Dashboard ist leer
+            </mat-card-title>
+          </mat-card-header>
+          <hr>
+          <mat-card-content class="dashboard-card-content" style="text-align: center">
+            <p *ngIf="!onSettingPage;else onIt">Gehe auf "Einstellung" und folge einem Sensor</p>
+            <ng-template #onIt>
+              <p>Folge einem Sensor</p>
+            </ng-template>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </ng-template>
+
+
+</div>

@@ -1,0 +1,24 @@
+<!--
+<mat-card [class.running]="sensor$.sensorState===0" [class.standing]="sensor$.sensorState===1"
+          [class.disturbing]="sensor$.sensorState===2"
+          [class.maintenance]="sensor$.sensorState===3" class="sensorListItem">Sensor: {{sensor$.clientId}}/{{sensor$.sensorId}}
+</mat-card>
+
+-->
+<mat-expansion-panel [class.running]="sensor$.sensorState===0" [class.standing]="sensor$.sensorState===1"
+                     [class.disturbing]="sensor$.sensorState===2"
+                     [class.maintenance]="sensor$.sensorState===3" class="sensorListItem">
+  <mat-expansion-panel-header>
+    <mat-panel-title style="">
+      {{sensor$.clientId}}/{{sensor$.sensorId}}
+    </mat-panel-title>
+    <mat-panel-description>
+      {{sensor$.sensorUnit}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <button mat-fab class="add-widget-button" (click)="addSensor()">
+    <mat-icon>add</mat-icon>
+  </button>
+  <span class="addText">  Add to Dashboard</span>
+</mat-expansion-panel>
+

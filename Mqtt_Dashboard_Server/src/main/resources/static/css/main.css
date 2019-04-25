@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+
+html, body {
+    font-family: 'Roboto', 'Helvetica';
+    min-height: 100% !important;
+    width: 100%;
+}
+body{
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.redBorder{
+    border: 1px solid red;
+}
+#topBar{
+    position: fixed;
+    width: 100vw;
+    height:60px;
+    top:0;
+}
+#contentWrapper{
+    height: 100%;
+    width: 100%;
+
+}
+
+#mainSection{
+    width: 90vw; /* Set the width of the sidebar */
+    z-index: 1; /* Stay on top */
+    margin-top: 50px; /* Stay at the top */
+    margin-left:10vw;
+
+}
+
+.contx{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+
+
+.table-wrapper-scroll-y {
+    max-height: 100%;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+}
+
+/* The sidebar menu */
+.sidenav {
+    height: 100vh; /* Full-height: remove this if you want "auto" height */
+    width: 10vw; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 60px; /* Stay at the top */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+/* The navigation menu links */
+.sidenav a {
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: rgba(234, 234, 230, 0.69);
+    display: block;
+}
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f0eff1;
+}
+
+.sidenav .profilContainer{
+    height: 15%;
+    width: 100%;
+}
+
+/* Style page content */
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
+.mainContentSection{
+    padding-bottom: 50px;
+    padding-top: 3px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.widgetContainer{
+    height: 400px;
+    width: 100%;
+    margin-right:0 ;
+    margin-left: 0;
+    padding: 3%;
+    border-radius: 5px;
+}
+
+.widgetContent{
+    height: 100%;
+}
+
+
+/* ---  playground --- */
+
+.height50{
+    height:50%;
+}
+.height100{
+    height:100%;
+}
+
+.widgetContent canvas{
+    max-height:100%;
+    max-width: 100%;
+}

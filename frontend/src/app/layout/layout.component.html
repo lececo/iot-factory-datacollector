@@ -1,0 +1,38 @@
+<div class="example-container">
+        <mat-toolbar color="primary" class="example-toolbar">
+          <button mat-icon-button (click)="sidenav.toggle()" type="button"><mat-icon>menu</mat-icon></button>
+          <h1 class="example-app-name">Iot-Factory</h1>
+          <span class="fill-remaining-space"></span>
+          <button mat-icon-button (click)="logout()" type="button"><mat-icon>exit_to_app</mat-icon></button>
+        </mat-toolbar>
+      
+        <mat-sidenav-container class="example-sidenav-container">
+          <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="setSidenavStateInLocalStorage(true)"
+          (closed)="setSidenavStateInLocalStorage(false)">
+            <mat-nav-list role="list">
+                <mat-list-item role="listitem" routerLink="/dashboard" routerLinkActive="active">
+                    <a >
+                      <mat-icon inline="true">view_quilt</mat-icon>
+                      Dashboard
+                    </a> 
+                </mat-list-item>
+                <mat-list-item role="listitem" routerLink="/settings" routerLinkActive="active">
+                    <a>
+                      <mat-icon inline="true">settings</mat-icon>
+                      Einstellungen
+                    </a>  
+                </mat-list-item>
+                <mat-list-item role="listitem" routerLink="/alerts" routerLinkActive="active">
+                  <a>
+                    <mat-icon inline="true">notifications_active</mat-icon>
+                    Alerts
+                  </a>  
+              </mat-list-item>
+            </mat-nav-list>
+          </mat-sidenav>
+      
+          <mat-sidenav-content>
+                <router-outlet></router-outlet>
+          </mat-sidenav-content>
+        </mat-sidenav-container>
+      </div>
