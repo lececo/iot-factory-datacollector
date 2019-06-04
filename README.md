@@ -1,5 +1,7 @@
 # Iot-Factory
 
+![Alt text](demo/settings.png?raw=true "Configure your individual dashboard")
+
 ## Installationsanweisungen
 
  1. Clonen des Repositories / Entpacken des Quellcode
