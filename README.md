@@ -1,6 +1,10 @@
 # Iot-Factory
 
+### Configure your individual dashboard
 ![Alt text](demo/settings.png?raw=true "Configure your individual dashboard")
+
+### Individual dashboards
+![Alt text](demo/dashboard.png?raw=true "Individual dashboard")
 
 ## Installationsanweisungen
 
